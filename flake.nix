@@ -2,11 +2,21 @@
   description = "Flakes For Everything (I Think)";
 
   inputs = {
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -17,7 +27,10 @@
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./flakes/nixos.nix ];
+      imports = [
+        ./flakes/nixos.nix
+        ./flakes/devShells.nix
+      ];
 
       flake = { };
 
@@ -36,6 +49,8 @@
           system,
           ...
         }:
-        { };
+        {
+          formatter = pkgs.nixfmt;
+        };
     };
 }
