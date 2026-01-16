@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  imports = [ /etc/nixos/hardware-configuration.nix ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ./modules/nh.nix
+  ];
 
   boot.loader = {
     timeout = 8;
