@@ -3,6 +3,7 @@
   imports = [
     ../modules/zsh.nix
     ../modules/hyprland.nix
+    ../modules/nvf.nix
   ];
 
   home = {
