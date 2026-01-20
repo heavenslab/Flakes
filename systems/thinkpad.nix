@@ -56,7 +56,7 @@
     users = {
       rafael = {
         isNormalUser = true;
-        hashedPassword = "79063e8037fff16d297a1fe65136f1251126cddb2cc9870ecf8d653835538e85";
+        password = "rafael";
         extraGroups = [
           "wheel"
           "networkmanager"
