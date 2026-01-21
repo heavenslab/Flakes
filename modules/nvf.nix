@@ -9,6 +9,35 @@
       vim = {
         vimAlias = false;
         viAlias = false;
+
+        options = {
+          shiftwidth = 2;
+          tabstop = 2;
+          conceallevel = 2;
+        };
+
+        lineNumberMode = "relNumber";
+
+        globals.mapLeader = " ";
+
+        terminal.toogleterm = {
+          enable = true;
+
+          lazygit = {
+            enable = true;
+          };
+        };
+
+        theme = {
+          enable = true;
+          name = "tokyonight";
+          style = "moon";
+        };
+
+        autocomplete.nvim-cmp = {
+          enable = true;
+        };
+
         lsp = {
           enable = true;
           formatOnSave = true;
