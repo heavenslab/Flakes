@@ -20,7 +20,7 @@
 
         globals.mapLeader = " ";
 
-        terminal.toogleterm = {
+        terminal.toggleterm = {
           enable = true;
 
           lazygit = {
